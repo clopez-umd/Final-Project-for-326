@@ -4,7 +4,6 @@
 # Algorithm 2: Steal and Shield System (Christian Lopez)
 
 # Relative parameters
-        
 def steal_and_shield(attacking_player, target_player): 
     
     # Sequence of steps -- checks if attacking player has a card to steal
@@ -55,7 +54,6 @@ def steal_and_shield(attacking_player, target_player):
     attacking_player.hand.append(stolen_card)
     return True
         
-
 # Algorithm 3: Swap System
 
 
