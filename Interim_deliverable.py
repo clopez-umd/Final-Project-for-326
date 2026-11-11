@@ -4,10 +4,6 @@
 # Algorithm 2: Steal and Shield System (Christian Lopez)
 
 # Relative parameters
-
-class Player:
-    def __init__(self, hand):
-        self.hand = hand
         
 def steal_and_shield(attacking_player, target_player): 
     
