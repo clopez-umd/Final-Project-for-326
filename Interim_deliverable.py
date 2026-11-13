@@ -127,7 +127,7 @@ def steal_and_shield(attacking_player, target_player):
     attacking_player.hand.append(stolen_card)
     return True
 
-    # Test function. (A successful steal would look like:)
+    # Test function. (A successful steal would look like this:)
     # player 1 = mockplayer (["Steal", 3, 5])
     # player 2 = mockplayer ([7, 9, 2])
 
@@ -206,9 +206,7 @@ print("After swap:", player1["hand"], player2["hand"])
 
 
 
-
-
-# Algorithm 5: Turn Management and Game Ending (Sangeeth Mathew)
+# Algorithm 4: Turn Management and Game Ending (Sangeeth Mathew)
 def manage_turns(players, current_player, completed_rounds, final_scores):
 	"""
 	Manages player turns, tracks completed rounds, and determines when the game ends. 
