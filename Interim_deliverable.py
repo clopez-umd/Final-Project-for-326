@@ -1,4 +1,4 @@
-# Algorithm 1: Card Distribution
+# Algorithm 1: Card Distribution (Bethel Hailegebriel)
 import random 
 
 def distribute_card(deck,players):
