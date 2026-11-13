@@ -107,7 +107,70 @@ def steal_and_shield(attacking_player, target_player):
     return True
         
 # Algorithm 3: Swap System
+def swap_cards(player1, player2):
+    """
+    Swaps one random card between the two players.
+    
+    Args: 
+        player1 (dict): The player using the swap card.
+        player2 (dict): The player that is being targeted.
+    
+    Returns: 
+        None: Both players' hands are to be updated directly.
+    
+    Side Effects: 
+        Removes the SWAP card from player1's hand. 
+        Replaces one random card between both the players. 
+    
+    Raises: 
+        ValueError: If a player swaps with themsevles, and don't have a
+        SWAP card, or either has no cards avaiable to replace. 
+    
+    Iteration:
+        Uses a for loop to check each of the cards in player1's hand for SWAP.
+    """
+    # Checks if both of the players are the same (Conditional branching)
+    if player1 is player2:
+        raise ValueError("Players cannot swap with themselves")
+    # Checks each cards in player's hand (Iteration)
+    swap_card = None
+    for card in player1["hand"]:
+        if card == "SWAP":
+            swap_card = card
+            break
+    
+    # Checks if the swap can happen (Conditional branching)
+    if swap_card is None:
+        raise ValueError("Player 1 does not have a SWAP card")
+    if len(player1["hand"]) < 2 or len(player2["hand"]) == 0:
+        raise ValueError("Both players need a card to exchange")
+    
+    # Removes the used SWAP card (Side effect)
+    
+    player1["hand"].remove(swap_card)
+    
+    # Randomly selects one card for each player's hand
+    
+    card1 = random.choice(player1["hand"])
+    card2 = random.choice(player2["hand"])
+    
+    # Exchanges the cards and updates players' hands (Side effect)
+    player1["hand"].remove(card1)
+    player2["hand"].remove(card2)
+    player1["hand"].append(card2)
+    player2["hand"].append(card1)
+  
+  # Test function 
+player1 = {"hand": [3, 5, 8, "SWAP"]}
+player2 = {"hand": [2, 6, 9]}
 
+print("Before swap", player1["hand"], player2["hand"])
+
+swap_cards(player1, player2)
+
+print("After swap:", player1["hand"], player2["hand"])
+   
+        
 
 # Algorithm 4: Save and Scoring System
 
