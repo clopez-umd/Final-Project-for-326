@@ -114,6 +114,98 @@ def steal_and_shield(attacking_player, target_player):
 
 # Algorithm 5: Turn Management and Game Ending
 
+def manage_turns(players, current_player, completed_rounds, final_scores):
+	"""
+	Manages player turns, tracks completed rounds, and determines when the game ends. 
+
+	Args:
+		players (list): List of players in the game.
+		current_player (str): The player whose turn just finished.
+		completed_rounds (int): Number of completed rounds.
+		final_scores (dict): Total scores of all players.
+
+	Returns:
+		tuple: The next player and updated round count.
+			   Returns None if the game ends for the next player.
+
+	Side effects:
+		Announces the next player, updates round progress, and announces the winner after 6 rounds.
+	"""
+	# Checks if there are players - Conditional branching
+	if len(players) == 0:
+		raise ValueError("There must be at least one player")
+
+	# Finds the current player's position in the list
+	current_index = players.index(current_player)
+
+	# Moves to the next player
+	next_index = current_index + 1
+
+	# Checks if all players have finished their turns 
+	# Conditional branching
+	if completed_rounds >=6:
+
+		# Finds the highest score
+		highest_score = max(final_scores.values())
+
+		# Creates a list of winners
+		winners = []
+
+		# Goes through each player - Iteration
+		for player in players:
+
+			# Checks if the player has the highest score
+			if final_scores{player} == highest_score:
+				winners.append(player)
+		# Announces the winner or a tie - Side effect
+		if len(winners) == 1:
+			print("Game Over!")
+			print("Winner:", winners[0])
+			print("Final Score:", highest_score)
+		else:
+			print("Game Over! It's a tie!")
+			print("Winners:", winners)
+			print("Final Score:", highest_score)
+
+		# Returns None because the game has ended
+		return None, completed_rounds
+
+	# Determines who plays next
+	next_player = players[next_index]
+
+	# Announces the next player's turn - Side effect
+	print("Next Turn:", next_player)
+	print("Completed Rounds:", completed_rounds)
+
+	# Returns updated turn information - Useful result
+	return next_player, completed_rounds
+
+# Test function
+players = ["Player 1", "Player 2", "Player 3", "Player 4"]
+
+final_scores = {
+	"Player 1": 20,
+	"Player 2": 30,
+	"Player 3": 12,
+	"Player 4": 25,
+}
+
+# Test 1: Normal turn
+current_player = "Player 1"
+completed_rounds = 3
+
+current_player, completed_rounds = manage_turns(
+	players, current_player, completed_rounds, final_scores
+)
+
+# Test 1: Final turn of the game
+current_player = "Player 3"
+completed_rounds = 5
+
+current_player, completed_rounds = manage_turns(
+	players, current_player, completed_rounds, final_scores
+)
+
 
 """
 For this assignment, each member of your group will write one (1) function (not a class, not a method)
