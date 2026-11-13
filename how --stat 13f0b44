@@ -1,0 +1,17 @@
+* [33m4dd2cfb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Updated
+* [33m0358ebc[m Updated docstrings
+* [33m13f0b44[m Added Algorithm 3 Swap System - Fischer
+[31m|[m *   [33ma6d9841[m[33m ([m[1;35mrefs/stash[m[33m)[m On main: Save my changes before pulling
+[31m|[m[31m/[m[33m|[m[34m\[m  
+[31m|[m [33m|[m * [33m316db21[m untracked files on main: 8ea6072 Update Interim_deliverable.py
+[31m|[m * [33m93f1f47[m index on main: 8ea6072 Update Interim_deliverable.py
+[31m|[m[31m/[m  
+* [33m8ea6072[m Update Interim_deliverable.py
+* [33mf97d75c[m Updated game code
+* [33m9ec777a[m Remove old Python files and update README
+* [33m197e602[m Updated my part of the game
+* [33mb6a65fd[m Delete Interim deliverable.py
+* [33me0e3c3b[m Delete Interim final.py
+* [33m44fdf9a[m Update Interim final.py
+* [33m25b824e[m Add my Python code for Steal or Save
+* [33ma2be97b[m Add card distribution algorithm
